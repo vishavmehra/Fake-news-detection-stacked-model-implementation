@@ -40,8 +40,8 @@ scratch on **GossipCop**, **PolitiFact** and **PolyglotFakeFacts** to test how w
 ├── datasets/
 │   ├── ISOT/                    Fake.csv, True.csv
 │   ├── LIAR/                    train.csv, valid.csv, test.csv
-│   ├── FakeNewsNet/             gossipcop_fake.csv, gossipcop_real.csv,
-│   │                            politifact_fake.csv, politifact_real.csv
+│   ├── GossipCop/               gossipcop_fake.csv, gossipcop_real.csv
+│   ├── PolitiFact/              politifact_fake.csv, politifact_real.csv
 │   └── PolyglotFakeFacts/       80.xlsx, 20.xlsx, Fake.xlsx, Real.xlsx
 ├── notebooks/
 │   ├── 01_ISOT/
@@ -77,8 +77,8 @@ directly in the notebook without re-running it.
 |---|---|---|---|---|
 | **ISOT Fake News** | `datasets/ISOT` | 44,898 articles (21,417 true / 23,481 fake) | Full news articles with `title`, `text`, `subject`, `date`. True articles are from Reuters; fake articles are from sites flagged by PolitiFact / Wikipedia. | Binary |
 | **LIAR** | `datasets/LIAR` | 12,836 statements (train 10,269 / valid 1,284 / test 1,283) | Short political claims from PolitiFact with 6 truth labels and speaker metadata | Binary + 6-class |
-| **GossipCop** (FakeNewsNet) | `datasets/FakeNewsNet` | 22,140 headlines (5,323 fake / 16,817 real) | Entertainment / celebrity news: `id`, `news_url`, `title`, `tweet_ids` | Binary |
-| **PolitiFact** (FakeNewsNet) | `datasets/FakeNewsNet` | 1,056 headlines (432 fake / 624 real) | Political news: `id`, `news_url`, `title`, `tweet_ids` | Binary |
+| **GossipCop** (FakeNewsNet) | `datasets/GossipCop` | 22,140 headlines (5,323 fake / 16,817 real) | Entertainment / celebrity news: `id`, `news_url`, `title`, `tweet_ids` | Binary |
+| **PolitiFact** (FakeNewsNet) | `datasets/PolitiFact` | 1,056 headlines (432 fake / 624 real) | Political news: `id`, `news_url`, `title`, `tweet_ids` | Binary |
 | **PolyglotFakeFacts** | `datasets/PolyglotFakeFacts` | 10,206 articles (4,912 fake / 5,294 real) in 18 languages, official 80 / 20 split | Headline, original text, English translation, keywords, URL/domain, language | Binary |
 
 ### ISOT columns
@@ -118,7 +118,11 @@ Label distribution (train / valid / test):
 | mostly-true | 1,966 | 251 | 249 |
 | true | 1,683 | 169 | 211 |
 
-### FakeNewsNet columns (GossipCop and PolitiFact)
+### GossipCop and PolitiFact columns
+
+GossipCop (celebrity / entertainment fact-checks from GossipCop.com) and PolitiFact (political
+fact-checks from PolitiFact.com) are two separate datasets that share the same file format.
+They are kept in separate folders and each notebook trains only on its own dataset.
 
 | Column | Description |
 |---|---|
@@ -637,8 +641,9 @@ DATA_DIR = Path("../../datasets/LIAR")
 
 ```python
 PROJECT_DIR = Path.cwd()
-DATA_DIR = Path("../../datasets/FakeNewsNet")          # GossipCop and PolitiFact notebooks
-# DATA_DIR = Path("../../datasets/PolyglotFakeFacts")  # PolyglotFakeFacts notebook
+DATA_DIR = Path("../../datasets/GossipCop")            # gossipcop_transformer_ensemble.ipynb
+# DATA_DIR = Path("../../datasets/PolitiFact")         # politifact_transformer_ensemble.ipynb
+# DATA_DIR = Path("../../datasets/PolyglotFakeFacts")  # polyglotfakefacts_transformer_ensemble.ipynb
 ```
 
 If you use Google Colab, upload the `datasets/` folder to Drive and use the Drive path instead.
