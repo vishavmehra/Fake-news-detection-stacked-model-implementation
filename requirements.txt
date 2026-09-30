@@ -1,0 +1,24 @@
+# Shared
+pandas
+numpy
+scipy
+scikit-learn
+matplotlib
+seaborn
+
+# Classic DL / ML notebooks (notebooks/01_ISOT/*, notebooks/02_LIAR/01_*)
+# Originally run on Google Colab with TensorFlow 2.18 / Keras 3.8.
+tensorflow>=2.18
+spacy          # then: python -m spacy download en_core_web_sm
+nltk
+wordcloud
+tabulate
+
+# Transformer notebooks (notebooks/02_LIAR/02_*, notebooks/03_cross_dataset_transformers/*)
+# Originally run locally on an NVIDIA RTX 2060 with torch 2.5.1+cu121 and transformers 5.9.0.
+torch>=2.5
+transformers
+accelerate
+sentencepiece
+tqdm
+openpyxl       # reads the PolyglotFakeFacts .xlsx files

@@ -1,0 +1,10 @@
+.ipynb_checkpoints/
+__pycache__/
+venv/
+.venv/
+
+# Fine-tuned transformer checkpoints and training logs written by the notebooks
+external_trained_models_v7/
+external_training_logs_v7/
+optimized_results_simple_liar_novel_v7/
+optimized_logs_simple_liar_novel_v7/
