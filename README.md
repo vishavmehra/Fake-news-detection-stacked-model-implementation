@@ -1,15 +1,15 @@
-# Fake News Detection — Deep Learning, Machine Learning, Stacked Ensembles and Transformers
+# Fake News Detection - Deep Learning, Machine Learning, Stacked Ensembles and Transformers
 
-This project studies automatic fake-news detection across **five public datasets** and three
+This project studies automatic fake news detection across **five public datasets** and three
 generations of models:
 
-1. **Classic deep learning** — Uni/Bi-directional LSTM, Uni/Bi-directional GRU and 1-D CNN (Keras).
-2. **Classic machine learning** — SVM, Logistic Regression, Decision Tree, KNN and two Random Forests
+1. **Classic deep learning** - Uni/Bi-directional LSTM, Uni/Bi-directional GRU and 1-D CNN (Keras).
+2. **Classic machine learning**  SVM, Logistic Regression, Decision Tree, KNN and two Random Forests
    on TF-IDF / term-frequency features (scikit-learn).
 3. **A custom stacked ensemble** that feeds the predictions of all DL + ML models into a Random Forest
    meta-classifier.
 4. **Fine-tuned transformers** (DistilBERT, BERT, RoBERTa) combined with TF-IDF and metadata baselines,
-   probability ensembles, threshold tuning, a stacked meta-learner and — on LIAR — a metadata
+   probability ensembles, threshold tuning, a stacked meta-learner and - on LIAR - a metadata
    **Graph Convolutional Network (GCN)**.
 
 The classic pipeline is developed on **ISOT** (long news articles) and then applied to **LIAR**
@@ -23,9 +23,9 @@ scratch on **GossipCop**, **PolitiFact** and **PolyglotFakeFacts** to test how w
 - [Repository structure](#repository-structure)
 - [Datasets](#datasets)
 - [Label convention](#label-convention)
-- [Part 1 — ISOT: DL vs ML and the stacked ensemble](#part-1--isot-dl-vs-ml-and-the-stacked-ensemble)
-- [Part 2 — LIAR](#part-2--liar)
-- [Part 3 — Cross-dataset transformer ensembles](#part-3--cross-dataset-transformer-ensembles)
+- [Part 1 - ISOT: DL vs ML and the stacked ensemble](#part-1--isot-dl-vs-ml-and-the-stacked-ensemble)
+- [Part 2 - LIAR](#part-2--liar)
+- [Part 3 - Cross-dataset transformer ensembles](#part-3--cross-dataset-transformer-ensembles)
 - [Results summary](#results-summary)
 - [Evaluation notes and known limitations](#evaluation-notes-and-known-limitations)
 - [How to run](#how-to-run)
